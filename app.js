@@ -22,8 +22,3 @@ app.listen(port,async()=>{
     console.log("Wadzzup")
     console.log(`Ebs example listening on ${port}`)
 });
-
-
-
-
-

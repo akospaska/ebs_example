@@ -1,7 +1,13 @@
 version: '2.1'
 
 services:
-  mongo:
-    image: mongo:5.0
+  authDb:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+      ##MYSQL_TCP_PORT: 3308
     ports:
-      - 27017:27017
+      - '3306:3306'

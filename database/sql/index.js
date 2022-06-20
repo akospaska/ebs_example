@@ -19,11 +19,18 @@ const mysqlDatabase=process.env.SQL_DATABASE
     })
 
     try{
-        await knex.raw("SELECT VERSION()")
-        console.log("Mysql connected!")
+
+    await  knex.schema.createTableIfNotExists("Persons", function (table) {
+        table.increments("Personid"); // integer id
+        table.decimal('Age');
+    })
+
+
+    await knex.raw("SELECT VERSION()")
+    console.log("Mysql connected!")
     }
     catch(error){
-
+console.log(error)
         const errorMessage = 'Mysql Connection Error!!!!!'
         console.log(errorMessage)
         throw new Error(errorMessage)
@@ -32,10 +39,6 @@ const mysqlDatabase=process.env.SQL_DATABASE
 
   const triggerAndGet = async ()=>{
     await knex.raw("insert into Persons(Age) values(1)")
-
-    const x = await knex.raw("select COUNT(Personid) as trigg from Persons")
-
-
 
   const y = await  knex('Persons')
   .select(['Personid'])
