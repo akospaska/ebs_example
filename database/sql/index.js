@@ -19,7 +19,6 @@ const mysqlDatabase=process.env.SQL_DATABASE
     })
 
     try{
-
     await  knex.schema.createTableIfNotExists("Persons", function (table) {
         table.increments("Personid"); // integer id
         table.decimal('Age');
