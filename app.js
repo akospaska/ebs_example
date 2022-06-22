@@ -13,7 +13,7 @@ app.get("/",async (req,res)=>{
     console.log(x[0].count)
 
 
-    res.send({message:"Hello from alestic beanstalk",triggered:x[0].count})
+    res.send({message:"Hello from alestic beanstalk!!!!",triggered:x[0].count})
 })
 const port = process.env.port || 3000
 app.listen(port,async()=>{
