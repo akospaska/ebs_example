@@ -19,6 +19,6 @@ const port = process.env.port || 3000
 app.listen(port,async()=>{
 
     sql.sqlInit()
-    console.log("Wadzzup")
+    console.log("Wadzzup!!")
     console.log(`Ebs example listening on ${port}`)
 });
